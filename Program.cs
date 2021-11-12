@@ -23,8 +23,12 @@ namespace BaseToBaseCS
          return false;
       }
 
+
       // Main
       static void Main(string[] args)  {
+
+         //int test = Functions.LowerBaseToTen(30, 5);
+         //Console.WriteLine(test);
 
          // Loop
          while (true)   {

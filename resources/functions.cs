@@ -6,7 +6,7 @@ namespace BaseToBaseCS
    {
 
       // Converts from a base lower than ten to base ten
-      public static int LowerBaseToTen(int numberToConvert, int startingBase) {
+      public static int FromLowerBaseToTen(int numberToConvert, int startingBase) {
          string numberToConvertString = numberToConvert.ToString();
          int power = 0;
          double total = 0;
@@ -21,12 +21,48 @@ namespace BaseToBaseCS
       }
 
       // Converts from base ten to a base lower than ten
-      public static int FromTenToLower(int numberToConvert, int targetBase)   {
-         return 1;
+      public static int FromTenToLowerBase(int numberToConvert, int targetBase)   {
+         string finalNumber = string.Empty;
+         int power = 0;
+         int baseRaised = 0;
+
+         while (baseRaised <= numberToConvert) {
+            power++;
+            baseRaised = (int)Math.Pow(targetBase, power);
+         }
+
+         power--;
+         baseRaised = (int)Math.Pow(targetBase, power);
+
+         int multiplier = 1;
+
+         while (baseRaised * multiplier <= numberToConvert) {
+            multiplier++;
+         }
+
+         baseRaised *= multiplier - 1;
+         finalNumber += multiplier.ToString();
+         numberToConvert -= baseRaised;
+
+         while (power > 0) {
+            power -= 1;
+            baseRaised = (int)Math.Pow(targetBase, power);
+            multiplier = 0;
+
+            while (baseRaised * multiplier <= numberToConvert) {
+               multiplier++;
+            }
+
+            multiplier--;
+            finalNumber += multiplier.ToString();
+            numberToConvert -= baseRaised * multiplier;
+         }
+
+         return Int32.Parse(finalNumber);
       }
 
       // Converts from base ten to a base higher than ten
-      public static int FromTenToHigher(int numberToConvert, int targetBase)   {
+      public static int FromTenToHigherBase(int numberToConvert, int targetBase)   {
          return 2;
       }
 

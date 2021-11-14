@@ -27,8 +27,8 @@ namespace BaseToBaseCS
       // Main
       static void Main(string[] args)  {
 
-         //int test = Functions.LowerBaseToTen(30, 5);
-         //Console.WriteLine(test);
+         int test = Functions.FromTenToLowerBase(30, 5); // should be 110, THERE IS AN ERROR
+         Console.WriteLine(test);
 
          // Loop
          while (true)   {

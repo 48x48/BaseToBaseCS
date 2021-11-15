@@ -40,9 +40,14 @@ namespace BaseToBaseCS
             multiplier++;
          }
 
-         baseRaised *= multiplier - 1;
+         Console.WriteLine("final = " + finalNumber.ToString() + "\nbaseRaised = " + baseRaised.ToString() + "\nMultiplier = " + multiplier.ToString());
+
+         multiplier -= 1;
+         baseRaised *= multiplier;
          finalNumber += multiplier.ToString();
          numberToConvert -= baseRaised;
+
+         Console.WriteLine("final = " + finalNumber.ToString() + "\nbaseRaised = " + baseRaised.ToString() + "\nMultiplier = " + multiplier.ToString());
 
          while (power > 0) {
             power -= 1;

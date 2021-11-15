@@ -27,7 +27,7 @@ namespace BaseToBaseCS
       // Main
       static void Main(string[] args)  {
 
-         int test = Functions.FromTenToLowerBase(30, 5); // 30, 5 should be 110, THERE IS AN ERROR
+         int test = Functions.FromTenToLowerBase(5512, 3); // 30, 5 should be 110, THERE IS AN ERROR
          Console.WriteLine(test);
 
          // Loop

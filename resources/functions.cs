@@ -26,13 +26,10 @@ namespace BaseToBaseCS
          int power = 0;
          int baseRaised = 0;
 
-         while (baseRaised <= numberToConvert) {
+         while (baseRaised < numberToConvert) {
             power++;
             baseRaised = (int)Math.Pow(targetBase, power);
          }
-
-         power--;
-         baseRaised = (int)Math.Pow(targetBase, power);
 
          int multiplier = 1;
 
@@ -40,14 +37,10 @@ namespace BaseToBaseCS
             multiplier++;
          }
 
-         Console.WriteLine("final = " + finalNumber.ToString() + "\nbaseRaised = " + baseRaised.ToString() + "\nMultiplier = " + multiplier.ToString());
-
          multiplier -= 1;
          baseRaised *= multiplier;
          finalNumber += multiplier.ToString();
          numberToConvert -= baseRaised;
-
-         Console.WriteLine("final = " + finalNumber.ToString() + "\nbaseRaised = " + baseRaised.ToString() + "\nMultiplier = " + multiplier.ToString());
 
          while (power > 0) {
             power -= 1;

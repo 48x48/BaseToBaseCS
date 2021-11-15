@@ -61,7 +61,16 @@ namespace BaseToBaseCS
 
       // Converts from base ten to a base higher than ten
       public static int FromTenToHigherBase(int numberToConvert, int targetBase)   {
-         return 2;
+         int quotient = Math.Floor(numberToConvert / targetBase);
+         List<string> remainders = new List<string>();
+
+         if (numberToConvert % targetBase < 10) {
+            remainders.Add(numberToConvert % targetBase);
+         } else {
+            
+            // BIG NUMBER (I need to add support for digits larger than 9)
+         }
+         return 1;
       }
 
    }

@@ -68,6 +68,7 @@ namespace BaseToBaseCS
          if (numberToConvert % targetBase < 10) {
             remainders.Add((numberToConvert % targetBase).ToString());
          } else {
+
             // BIG NUMBER (I need to add support for digits larger than 9)
          }
          return 1;

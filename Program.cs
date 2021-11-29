@@ -1,5 +1,5 @@
 ﻿using System;
-using Newtonsoft.Json;      // JSON: https://www.newtonsoft.com/json
+//using Newtonsoft.Json;      // JSON: https://www.newtonsoft.com/json
 
 
 namespace BaseToBaseCS
@@ -45,6 +45,8 @@ namespace BaseToBaseCS
       //////////////////////////////// Main ////////////////////////////////
       //////////////////////////////////////////////////////////////////////
       static void Main(string[] args)  {
+
+         Functions.test();
 
          int test = Functions.FromTenToLowerBase(5512, 3); // 30, 5 should be 110, THERE IS AN ERROR
          Console.WriteLine(5 / 2);

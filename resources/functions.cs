@@ -1,10 +1,22 @@
 using System;
-using System.Collections.Generic;
+using System.IO;  // For streamreader
+using System.Collections.Generic;   // For lists
+using Newtonsoft.Json;  // For json
 
 namespace BaseToBaseCS
 {
    class Functions
    {
+
+      public static void test()  {
+         using (StreamReader reader = new StreamReader("test.json"))   {
+            string json = reader.ReadToEnd();
+            List<string> thing = new List<string>();
+            thing.AddRange(JsonConvert.DeserializeObject<List<string>>(json));
+            Console.WriteLine(thing);
+         }
+      }
+
 
       // Converts from a base lower than ten to base ten
       public static int FromLowerBaseToTen(int numberToConvert, int startingBase) {
@@ -18,6 +30,7 @@ namespace BaseToBaseCS
             total += Convert.ToDouble(intOfChar) * Math.Pow(startingBase, power);
             power += 1;
          }
+
          return Convert.ToInt32(total);
       }
 
@@ -71,6 +84,7 @@ namespace BaseToBaseCS
 
             // BIG NUMBER (I need to add support for digits larger than 9)
          }
+
          return 1;
       }
 

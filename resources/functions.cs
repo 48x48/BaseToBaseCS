@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace BaseToBaseCS
 {
@@ -61,13 +62,12 @@ namespace BaseToBaseCS
 
       // Converts from base ten to a base higher than ten
       public static int FromTenToHigherBase(int numberToConvert, int targetBase)   {
-         int quotient = Math.Floor(numberToConvert / targetBase);
+         int quotient = numberToConvert / targetBase;
          List<string> remainders = new List<string>();
 
          if (numberToConvert % targetBase < 10) {
-            remainders.Add(numberToConvert % targetBase);
+            remainders.Add((numberToConvert % targetBase).ToString());
          } else {
-            
             // BIG NUMBER (I need to add support for digits larger than 9)
          }
          return 1;

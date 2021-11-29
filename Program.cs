@@ -23,11 +23,29 @@ namespace BaseToBaseCS
          return false;
       }
 
+      // Check range
+      static string CheckRangeOfInputs(int startingBase, int endingBase)   {
 
-      // Main
+         string msg = "";
+
+         if (startingBase < 2 || startingBase > 10)   {
+            msg = "ERROR: This program cannot handle base " + startingBase.ToString() + " as the starting base!";
+         }
+
+         if (endingBase < 2 || endingBase > 10) {  ////// change endingBase range when bases larger than 10 are supported
+            msg = "ERROR: This program cannot handle base " + endingBase.ToString() + "!";
+         }
+
+         return msg;
+      }
+
+      //////////////////////////////////////////////////////////////////////
+      //////////////////////////////// Main ////////////////////////////////
+      //////////////////////////////////////////////////////////////////////
       static void Main(string[] args)  {
 
          int test = Functions.FromTenToLowerBase(5512, 3); // 30, 5 should be 110, THERE IS AN ERROR
+         Console.WriteLine(5 / 2);
          Console.WriteLine(test);
 
          // Loop
@@ -39,12 +57,9 @@ namespace BaseToBaseCS
             int endingBase = Int32.Parse(AskForInput("What base would you like to convert it to?:"));
 
             // Check range
-            if (startingBase < 2 || startingBase > 10)   {
-               Console.WriteLine("ERROR: This program cannot handle base " + startingBase.ToString() + " as the starting base!");
-               continue;
-            }
-            if (endingBase < 2 || endingBase > 10) {  ////// change endingBase range when bases larger than 10 are supported
-               Console.WriteLine("ERROR: This program cannot handle base " + endingBase.ToString() + "!");
+            string rangeCheckResults = CheckRangeOfInputs(startingBase, endingBase);
+            if (rangeCheckResults != "") {
+               Console.WriteLine(rangeCheckResults);
                continue;
             }
 

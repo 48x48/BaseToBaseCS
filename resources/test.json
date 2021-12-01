@@ -1,7 +1,7 @@
 {
-   "thing",
-   "thing2",
-   "thing3",
-   "thing4",
-   "thing5"
+   "thing": 1,
+   "thing2": 2,
+   "thing3": 3,
+   "thing4": 4,
+   "thing5": 5
 }

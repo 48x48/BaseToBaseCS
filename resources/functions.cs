@@ -9,7 +9,7 @@ namespace BaseToBaseCS
    {
 
       public static void test()  {
-         using (StreamReader reader = new StreamReader("test.json"))   {
+         using (StreamReader reader = new StreamReader("resources\\test.json"))   {
             string json = reader.ReadToEnd();
             List<string> thing = new List<string>();
             thing.AddRange(JsonConvert.DeserializeObject<List<string>>(json));
